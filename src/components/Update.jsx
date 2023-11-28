@@ -29,15 +29,15 @@ function Update({ history,index }) {
 
   return (
     <>
-      <span class="badge rounded-pill bg-success" onClick={()=>handleShow(index)}>Update</span>
+      <span class="badge rounded-pill bg-primary" onClick={()=>handleShow(index)}>Update</span>
 
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Update</Modal.Title>
+        <Modal.Title><h1 className='text-center text-primary'>UPDATE</h1></Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form className='border shadow bg-light rounded p-3'>
+          <Form className='border shadow bg-light text-primary rounded p-3'>
 
 
           <Row className='justify-content-inline'>
@@ -60,15 +60,10 @@ function Update({ history,index }) {
             <Form.Label className='fw-bolder'>Number Of Days</Form.Label>
             <Form.Control type="text" value={update.days} onChange={(e)=>setUpdate({...update,days:e.target.value})} placeholder="1" />
           </Form.Group>
-          </Form>
+          <button type="button" class="btn btn-primary mx-auto bg-primary text-light d-block"  onClick={()=>updateBook(update?.id)} fdprocessedid="bqpep">Save Changes</button>
+</Form>
         </Modal.Body>
-        <Modal.Footer>
-
-          <button type="button" class="btn btn-success  text-light"  onClick={()=>updateBook(update?.id)} style={{ backgroundColor: "green" }} fdprocessedid="bqpep">Save Changes</button>
-
-
-        </Modal.Footer>
-      </Modal>
+        </Modal>
     </>
   );
 }
